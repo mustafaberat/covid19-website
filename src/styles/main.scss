@@ -1,0 +1,70 @@
+@import "~bootstrap/scss/bootstrap";
+
+$darkRed: #e50058;
+$darkBlue: #5ecef4;
+$white: #f0ffff;
+$black: #343a40;
+
+#root {
+  background-color: $black;
+
+  .myContainer {
+    max-width: 1200px;
+
+    // NAVBAR
+    & .navbar-container {
+      width: 100%;
+      border-bottom: 2px solid #e50058;
+    }
+    // END NAVBAR
+    // FORM
+
+    & .myForm {
+      & .form-control:focus {
+        border-color: $darkRed;
+      }
+      & .myLabel {
+        color: $darkBlue;
+      }
+      & .inputAndButton {
+        display: flex;
+        width: 100%;
+        & .myInput {
+          margin-right: 20px;
+          color: $black;
+        }
+        & .myButton {
+          margin-left: auto;
+          background-color: $darkRed;
+          color: $white;
+          font-weight: bold;
+        }
+      }
+    }
+    // END FORM
+    // TABLE
+    & .myTableDiv {
+      width: 40%;
+      border: 2px solid red;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      & .tableTitle {
+        color: $darkRed;
+      }
+
+      & .myTable {
+        color: $darkBlue;
+        td {
+          color: red;
+        }
+        th {
+          color: pink;
+        }
+      }
+    }
+    // END TABLE
+  }
+}
