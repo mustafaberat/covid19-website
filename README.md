@@ -3,7 +3,7 @@ Coronavirus and countries of the world: [Link](https://covid19.now.sh)
 ## Screenshot
 ![screenshot](https://github.com/mustafaberat/covid19-website/blob/master/src/screenshot.PNG)
 
-**Technologies: React - Axios - Bootstrap - SCSS
+**Technologies: React - Axios - Bootstrap - SCSS**
 
 ## Available Scripts
 
