@@ -11,13 +11,23 @@ $black: #343a40;
 
     // NAVBAR
     & .navbar-container {
+      height: 70px;
       width: 100%;
       border-bottom: 2px solid #e50058;
+      & .navbar{
+        height: 100%;
+      }
+      @media (max-width: 765px) {
+        .navbar{
+          justify-content: center;
+        }
+      }
     }
     // END NAVBAR
     // FORM
 
     & .myForm {
+      margin-top: 20px;
       & .form-control:focus {
         border-color: $darkRed;
       }
@@ -26,31 +36,68 @@ $black: #343a40;
       }
       & .inputAndButton {
         display: flex;
+        margin-top: 12px;
         width: 100%;
         & .myInput {
-          margin-right: 20px;
           color: $black;
-        }
-        & .myButton {
-          margin-left: auto;
-          background-color: $darkRed;
-          color: white;
-          font-weight: bold;
         }
       }
     }
     // END FORM
+    // LOADING
+    .loadingLabel{
+      color: $darkBlue;
+      margin-top: 20px;
+    }
+    // END LOADING
     // TABLE
     & .cardContainer {
       display: grid;
-      grid-template-columns: auto auto;
+      grid-template-columns: 34% 33% 33%;
       align-items: center;
     }
+    @media (max-width: 800px) {
+      .cardContainer{
+        grid-template-columns: 50% 50%;
+      }
+    }
+    @media (max-width: 550px) {
+      .cardContainer{
+        grid-template-columns: 100%;
+      }
+      .panel{
+        width: 100% !important;
+      }
+      .myLabel,
+      .myInput{
+        text-align: center;
+      }
+      td,th{
+        padding: 0.3rem;
+      }
+      h4{
+        font-size: 1.5rem;
+      }
+    }
+    @media (max-width: 400px) {
+      h4{
+        font-size: 1.2rem;
+      }
+      .navbar-brand{
+        font-size: 16px;
+      }
+      .myLabel{
+        font-size: 1.8rem;
+        text-align:center;
+      }
+      .panel-heading{
+        font-size: 14px;
+      }
+    }
     & .panel {
-      margin-bottom: 20px;
-      cursor: pointer;
+      margin-top: 40px;
       background-color: white;
-      width: 80%;
+      width: 90%;
       border: 1px solid transparent;
       border-color: #ddd;
       border-radius: 4px;
@@ -65,6 +112,7 @@ $black: #343a40;
 
         & .searchBtnContainer {
           float: right !important;
+          margin-top: 10px;
           padding: 6px 12px;
           border: 1px solid white;
           background-color: $darkRed;
@@ -84,16 +132,28 @@ $black: #343a40;
             border-radius: 4px;
           }
         }
+      } //end of panel heading
+      & .globalCardHeading{
+        background-color: $black;
+        color: white;
+        & .searchBtnContainer{
+          background-color: $darkRed;
+        }
       }
+    } //end of panel
+    .globalPanel{
+      background-color: $darkBlue;
     }
     // END TABLE
   } //End of container
   // FOOTER
   & .myfooter {
     color: white;
+    margin-top: 50px;
     & .footerA {
       color: $darkBlue;
     }
   }
   // END FOOTER
 }
+

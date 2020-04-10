@@ -4,16 +4,17 @@ import "../styles/main.scss";
 import SearchIcon from "./icons/SearchIcon";
 
 
-const Card = (props) => {
+const GlobalCard = (props) => {
+    console.log(props);
     return (
-        <div className="panel clickable">
-            <div className="panel-heading">
+        <div className="panel clickable globalPanel">
+            <div className="panel-heading globalCardHeading">
                 <div className="searchBtnContainer">
-                    <SearchIcon />
+                    <SearchIcon/>
                 </div>
                 <div>
-                    <h4>{props.source.Country}</h4>
-                    <span>{props.source.CountryCode}</span>
+                    <h4>Global</h4>
+                    <span>World</span>
                 </div>
             </div>
             <table className="table">
@@ -44,4 +45,4 @@ const Card = (props) => {
     )
 }
 
-export default Card
+export default GlobalCard
