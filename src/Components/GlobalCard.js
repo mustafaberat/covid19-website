@@ -5,12 +5,11 @@ import SearchIcon from "./icons/SearchIcon";
 
 
 const GlobalCard = (props) => {
-    console.log(props);
     return (
         <div className="panel clickable globalPanel">
             <div className="panel-heading globalCardHeading">
                 <div className="searchBtnContainer">
-                    <SearchIcon/>
+                    <SearchIcon />
                 </div>
                 <div>
                     <h4>Global</h4>

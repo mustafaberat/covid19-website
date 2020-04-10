@@ -21,17 +21,17 @@ class Home extends React.Component {
     }
   }
 
-  
-    handleChange = (event) => {
-      this.setState({inputResult: event.target.value})
-    }
-  
-    componentDidMount = () => {
-      axios.get("https://api.covid19api.com/summary")
-        .then(response => this.setState({ diseases: response.data.Countries, isLoading: false, globalDiseases: response.data.Global }))
-    }
 
-  
+  handleChange = (event) => {
+    this.setState({ inputResult: event.target.value })
+  }
+
+  componentDidMount = () => {
+    axios.get("https://api.covid19api.com/summary")
+      .then(response => this.setState({ diseases: response.data.Countries, isLoading: false, globalDiseases: response.data.Global }))
+  }
+
+
   render() {
     return (
       <div className="all">
@@ -47,20 +47,20 @@ class Home extends React.Component {
             </div>
           </Form>
 
-          {this.state.isLoading ? 
-          <h2 className="loadingLabel">Loading...</h2> : 
-          <div className="cardContainer">
-          
-            {<GlobalCard source={this.state.globalDiseases} />}
-            {this.state.diseases.map((disease)=>{
-                if (((((disease.Country).toUpperCase()).includes(((this.state.inputResult).toUpperCase())))  ||
-                (disease.CountryCode).includes((this.state.inputResult).toUpperCase())) &&
-                (disease.TotalConfirmed !== 0) && 
-                (this.state.inputResult !== "")) { 
+          {this.state.isLoading ?
+            <h2 className="loadingLabel">Loading...</h2> :
+            <div className="cardContainer">
+
+              {this.state.diseases.map((disease) => {
+                if (((((disease.Country).toUpperCase()).includes(((this.state.inputResult).toUpperCase()))) ||
+                  (disease.CountryCode).includes((this.state.inputResult).toUpperCase())) &&
+                  (disease.TotalConfirmed !== 0) &&
+                  (this.state.inputResult !== "")) {
                   return <div key={disease.Slug}> <Card source={disease} /> </div>
                 } return null;
-            })}
-          </div>}
+              })}
+              {<GlobalCard source={this.state.globalDiseases} />}
+            </div>}
 
         </Container>
         <MyFooter path="https://mustafaberat.now.sh/" webname="Mustafa Berat" />
