@@ -1,4 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Coronavirus and countries of the world: [Link](https://covid19.now.sh)
+
+## Screenshot
+![screenshot](https://github.com/mustafaberat/covid19-website/blob/master/src/screenshot.PNG)
+
+**Technologies: React - Axios - Bootstrap - SCSS
 
 ## Available Scripts
 
