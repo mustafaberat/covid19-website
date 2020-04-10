@@ -2,12 +2,10 @@
 
 $darkRed: #e50058;
 $darkBlue: #5ecef4;
-$white: #f0ffff;
 $black: #343a40;
 
 #root {
   background-color: $black;
-
   .myContainer {
     max-width: 1200px;
 
@@ -36,35 +34,66 @@ $black: #343a40;
         & .myButton {
           margin-left: auto;
           background-color: $darkRed;
-          color: $white;
+          color: white;
           font-weight: bold;
         }
       }
     }
     // END FORM
     // TABLE
-    & .myTableDiv {
-      width: 40%;
-      border: 2px solid red;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    & .cardContainer {
+      display: grid;
+      grid-template-columns: auto auto;
       align-items: center;
-      text-align: center;
-      & .tableTitle {
-        color: $darkRed;
-      }
+    }
+    & .panel {
+      margin-bottom: 20px;
+      cursor: pointer;
+      background-color: white;
+      width: 80%;
+      border: 1px solid transparent;
+      border-color: #ddd;
+      border-radius: 4px;
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+      & .panel-heading {
+        padding: 10px 15px;
+        border-bottom: 1px solid transparent;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        background-color: $darkBlue;
 
-      & .myTable {
-        color: $darkBlue;
-        td {
-          color: red;
-        }
-        th {
-          color: pink;
+        & .searchBtnContainer {
+          float: right !important;
+          padding: 6px 12px;
+          border: 1px solid white;
+          background-color: $darkRed;
+          border-radius: 4px;
+          & svg {
+            color: white;
+            display: inline-block;
+            margin-bottom: 0;
+            font-weight: 400;
+            text-align: center;
+            vertical-align: middle;
+            background-image: none;
+            border: 1px solid transparent;
+            white-space: nowrap;
+            font-size: 1.1rem;
+            line-height: 1.42857143;
+            border-radius: 4px;
+          }
         }
       }
     }
     // END TABLE
+  } //End of container
+  // FOOTER
+  & .myfooter {
+    color: white;
+    & .footerA {
+      color: $darkBlue;
+    }
   }
+  // END FOOTER
 }

@@ -1,10 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 
-import { Container, Button, Input, Form, Table } from 'reactstrap';
+import { Container, Button, Input, Form } from 'reactstrap';
 
 import MyNav from "./MynavComp";
-// // import Card from "./CardComp";
+import MyFooter from "./MyFooter";
+import Card from "./CardComp";
 import "../styles/main.scss";
 
 
@@ -18,44 +19,30 @@ class Home extends React.Component {
   }
   render() {
     return (
-      <Container className="myContainer">
-        {/* NAVBAR */}
-        <MyNav />
+      <div className="all">
+        <Container className="myContainer">
+          {/* NAVBAR */}
+          <MyNav />
 
-        {/* FORM */}
+          {/* FORM */}
+          <Form className="myForm">
+            <h1 className="myLabel">Search for a country</h1>
+            <div className="inputAndButton">
+              <Input className="myInput" type="text" name="text" id="country" placeholder="Enter your country" />
+              <Button className="myButton">Submit</Button>
+            </div>
+          </Form>
 
-        <Form className="myForm">
-          <h1 className="myLabel">Search for a country</h1>
-          <div className="inputAndButton">
-            <Input className="myInput" type="text" name="text" id="country" placeholder="Enter your country" />
-            <Button className="myButton">Submit</Button>
+          {/* TABLE */}
+          <div className="cardContainer">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
           </div>
-        </Form>
-
-        <div className="myTableDiv">
-          <h4 className="tableTitle">Country Name</h4>
-          <Table className="myTable" striped bordered hover size="sm">
-            <tr>
-              <th>NewConfirmed</th>
-              <td>11212123</td>
-            </tr>
-            <tr>
-              <th>TotalConfirmed</th>
-              <td>123123123</td>
-            </tr>
-            <tr>
-              <th>NewDeaths</th>
-              <td>123123213</td>
-            </tr>
-            <tr>
-              <th>Total Deaths</th>
-              <td>123213123</td>
-            </tr>
-
-          </Table>
-        </div>
-
-      </Container>
+        </Container>
+        <MyFooter path="https://mustafaberat.now.sh/" webname="Mustafa Berat" />
+      </div>
     );
   }
 
